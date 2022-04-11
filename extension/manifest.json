@@ -1,9 +1,13 @@
 {
-    "name" : "Vay-k",
-    "version": "1.0",
     "manifest_version": 2,
-    "description": "test",
+  
+    "name": "Vay-K",
+    "description": "Plan trips easily with the Vay-K Chrome Extension.",
+    "version": "1.0",
+    "icons": { "128": "/images/logo.png" },
     "browser_action": {
-        "default_popup": "src/popup.html"
-    }
-}
+      "default_icon": "/images/logo.png",
+      "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab"]
+  }
