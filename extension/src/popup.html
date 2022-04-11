@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vay-K</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+
+    <style>
+
+      html,
+
+      body {
+        font-family: "Jacques Francois";
+        font-size: 14px;
+        margin: 0;
+        min-height: 500px;
+        padding: 0;
+        width: 390px;
+        background-color: #3B586B;
+      }
+
+      h1 {
+        font-family: "Jacques Francois";
+        font-size: 30px;
+        font-weight: 400;
+        margin: 0;
+        color: #F9EFC7;
+      }
+
+      img {
+        width: 30px;
+      }
+
+      .modal-header {
+        align-items: center;
+        border-bottom: 0.5px solid #3B586B;
+      }
+
+      .modal-content {
+        padding: 0 22px;
+      }
+
+      .modal-icons {
+        border-top: 0.5px solid #F9EFC7;
+        height: 50px;
+        width: 100%;
+      }
+
+      .logo {
+        padding: 16px;
+      }
+
+      .logo-icon {
+        vertical-align: text-bottom;
+        margin-right: 12px;
+      }
+
+      .version {
+        color: #F9EFC7;
+        font-size: 18px;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <div class="modal-header">
+      <h1 class="logo">
+        <img class="logo-icon" src="images/logo.png" sizes="20px"/>Vay-K
+        <span class="version">(1.0)</span>
+      </h1>
+    </div>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {box-sizing: border-box}
+    
+    /* Set height of body and the document to 100% */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: "Jacques Francois";
+    }
+    
+    /* Style tab links */
+    .tablink {
+      background-color: #F9EFC7;
+      font-weight: bold;
+      color: black;
+      font-family: "Jacques Francois";
+      float: left;
+      outline: black;
+      cursor: pointer;
+      padding: 12px 14px;
+      font-size: 20px;
+      width: 33.33%;
+    }
+    
+    .tablink:hover {
+      background-color: #FDCCA0;
+    }
+    
+    /* Style the tab content (and add height:100% for full page content) */
+    .tabcontent {
+      color: black;
+      display: none;
+      padding: 100px 20px;
+      height: 100%;
+    }
+    
+    #Bookmarks {background-color: white;}
+    #Trips {background-color: white;}
+    #Account {background-color: white;}
+    </style>
+    </head>
+    <body>
+    
+    <button class = "tablink" onclick = "openPage(event, 'Bookmark')">Bookmark</button>
+    <button class = "tablink" onclick = "openPage(event, 'Trips')">Trips</button>
+    <button class = "tablink" onclick = "openPage(event, 'Account')" id="defaultOpen">Account</button>
+    
+    <div id = "Bookmark" class = "tabcontent">
+      <h3>Bookmark</h3>
+      <p>Home is where the heart is..</p>
+    </div>
+    
+    <div id = "Trips" class = "tabcontent">
+      <h3>Trips</h3>
+      <p>Some news this fine day!</p> 
+    </div>
+    
+    <div id = "Account" class = "tabcontent">
+      <h3>Account</h3>
+      <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
+    
+    <script>
+    function openPage(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    }
+    </script>
+     
+      </div>
+    </div>
+  </body>
+</html>
