@@ -113,62 +113,40 @@
     /* Style the tab content (and add height:100% for full page content) */
     .tabcontent {
       color: black;
-      display: none;
-      padding: 100px 20px;
+      padding: 70px 20px;
       height: 100%;
+      font-size: 20px;
+      display: none;
     }
+
     
-    #Bookmarks {background-color: white;}
-    #Trips {background-color: white;}
-    #Account {background-color: white;}
+    #Bookmark {background-color: #3B586B;}
+    #Trips {background-color: #3B586B;}
+    #Account {background-color: #3B586B;}
     </style>
     </head>
     <body>
     
-    <button class = "tablink" onclick = "openPage(event, 'Bookmark')">Bookmark</button>
-    <button class = "tablink" onclick = "openPage(event, 'Trips')">Trips</button>
-    <button class = "tablink" onclick = "openPage(event, 'Account')" id="defaultOpen">Account</button>
+    <button class = "tablink" id = 'tab' tabName = 'Bookmark'>Bookmark</button>
+    <button class = "tablink" id = 'tab' tabName = 'Trips'>Trips</button>
+    <button class = "tablink active" id = 'tab' tabName = 'Account'>Account</button>
     
-    <div id = "Bookmark" class = "tabcontent">
+    <div class = "tabcontent">
+        <h3>Account</h3>
+        <p>View access to account settings</p>
+    </div>
+
+    <div class = "tabcontent">
       <h3>Bookmark</h3>
       <p>Check bookmarks that have been saved</p>
     </div>
     
-    <div id = "Trips" class = "tabcontent">
+    <div class = "tabcontent">
       <h3>Trips</h3>
       <p>Look at previously saved trips</p> 
     </div>
     
-    <div id = "Account" class = "tabcontent">
-      <h3>Account</h3>
-      <p>View access to account settings</p>
-    </div>
-    
-    <script>
-    function openPage(evt, tabName) {
-        // Declare all variables
-        var i, tabcontent, tablinks;
-
-        // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        // Get all elements with class="tablinks" and remove the class "active"
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-    }
-    </script>
+    <script src = "script.js"></script>
      
       </div>
     </div>
