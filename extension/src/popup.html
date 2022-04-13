@@ -116,7 +116,6 @@
       padding: 70px 20px;
       height: 100%;
       font-size: 20px;
-      display: none;
     }
 
     
@@ -127,21 +126,21 @@
     </head>
     <body>
     
-    <button class = "tablink" id = 'tab' tabName = 'Bookmark'>Bookmark</button>
-    <button class = "tablink" id = 'tab' tabName = 'Trips'>Trips</button>
-    <button class = "tablink active" id = 'tab' tabName = 'Account'>Account</button>
-    
-    <div class = "tabcontent">
+    <button class = "tablink" id = "link" onclick = "openTab(event, 'Bookmark')">Bookmark</button>
+    <button class = "tablink" id = "link" onclick = "openTab(event, 'Trips')">Trips</button>
+    <button class = "tablink active" id = "link" onclick = "openTab(event, 'Account')">Account</button>
+
+    <div id = "Account" class = "tabContent">
         <h3>Account</h3>
         <p>View access to account settings</p>
     </div>
 
-    <div class = "tabcontent">
+    <div id = "Bookmark" class = "tabContent" style = "display:none">
       <h3>Bookmark</h3>
       <p>Check bookmarks that have been saved</p>
     </div>
     
-    <div class = "tabcontent">
+    <div id = "Trips" class = "tabContent" style = "display:none">
       <h3>Trips</h3>
       <p>Look at previously saved trips</p> 
     </div>
