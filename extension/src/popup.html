@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+    <!-- 'sha256-WP85h+V4ZIdv45b++fHb+6rm/5s16wcXZAnkEqkb1Qg=' -->
+
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-WP85h+V4ZIdv45b++fHb+6rm/5s16wcXZAnkEqkb1Qg='"> -->
     <title>Vay-K</title>
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
@@ -75,13 +79,14 @@
   <body>
     <div class="modal-header">
       <h1 class="logo">
-        <img class="logo-icon" src="images/logo.png" sizes="20px"/>Vay-K
+        <img class="logo-icon" src="images/logo2.png" sizes="20px"/>Vay-K
         <span class="version">(1.0)</span>
       </h1>
     </div>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <style>
     * {box-sizing: border-box}
     
@@ -125,10 +130,16 @@
     </style>
     </head>
     <body>
-    
-    <button class = "tablink" id = "link" onclick = "openTab(event, 'Bookmark')">Bookmark</button>
-    <button class = "tablink" id = "link" onclick = "openTab(event, 'Trips')">Trips</button>
-    <button class = "tablink active" id = "link" onclick = "openTab(event, 'Account')">Account</button>
+
+      <!-- tablink and tabContent are necessary so don't take them out -->
+
+    <!-- <button class = "tablink Bookmark" id = "link"><p>Bookmark</p></button>
+    <button class = "tablink Trips" id = "link"><p>Trips</p></button>
+    <button class = "tablink Account" id = "link"><p>Account</p></button> -->
+
+    <button class = "tablink" id = "link" onclick="openTab('Bookmark')">Bookmark</button>
+    <button class = "tablink" id = "link" onclick="openTab('Trips')">Trips</button>
+    <button class = "tablink" id = "link" onclick="openTab('Account')">Account</button>
 
     <div id = "Account" class = "tabContent">
         <h3>Account</h3>
@@ -144,8 +155,43 @@
       <h3>Trips</h3>
       <p>Look at previously saved trips</p> 
     </div>
-    
-    <script src = "script.js"></script>
+
+    <!-- <script src="script.js"></script> -->
+
+    <!-- <script>
+      // function openTab(evt, tabName) {
+      //   var i, x, tablinks;
+      //   x = document.getElementsByClassName("tabContent");
+      //   for (i = 0; i < x.length; i++) {
+      //     x[i].style.display = "none";
+      //   }
+      //   tablinks = document.getElementsByClassName("tablink");
+      //   for (i = 0; i < x.length; i++) {
+      //     tablinks[i].className = tablinks[i].className.replace(" active", "");
+      //   }
+      //   document.getElementById(tabName).style.display = "block";
+      //   evt.currentTarget.className += " active";
+      // }
+      function openTab(tabName) {
+        var i;
+        var x = document.getElementsByClassName("tabContent");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        document.getElementById(tabName).style.display = "block";  
+      }
+    </script> -->
+
+    <script>
+      function openTab(tabName) {
+        var i;
+        var x = document.getElementsByClassName("tabContent");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        document.getElementById(tabName).style.display = "block";
+      }
+    </script>
      
       </div>
     </div>
