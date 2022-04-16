@@ -9,5 +9,6 @@
       "default_icon": "/images/logo.png",
       "default_popup": "popup.html"
     },
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab"],
+    "content_security_policy": "script-src 'self'; object-src 'self'"
   }
