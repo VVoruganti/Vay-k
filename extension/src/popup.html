@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <!-- 'sha256-WP85h+V4ZIdv45b++fHb+6rm/5s16wcXZAnkEqkb1Qg=' -->
-
-    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-WP85h+V4ZIdv45b++fHb+6rm/5s16wcXZAnkEqkb1Qg='"> -->
     <title>Vay-K</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -17,183 +14,40 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
-
-    <style>
-
-      html,
-
-      body {
-        font-family: "Jacques Francois";
-        font-size: 14px;
-        margin: 0;
-        min-height: 500px;
-        padding: 0;
-        width: 390px;
-        background-color: #3B586B;
-      }
-
-      h1 {
-        font-family: "Jacques Francois";
-        font-size: 30px;
-        font-weight: 400;
-        margin: 0;
-        color: #F9EFC7;
-      }
-
-      img {
-        width: 30px;
-      }
-
-      .modal-header {
-        align-items: center;
-        border-bottom: 0.5px solid #3B586B;
-      }
-
-      .modal-content {
-        padding: 0 22px;
-      }
-
-      .modal-icons {
-        border-top: 0.5px solid #F9EFC7;
-        height: 50px;
-        width: 100%;
-      }
-
-      .logo {
-        padding: 16px;
-      }
-
-      .logo-icon {
-        vertical-align: text-bottom;
-        margin-right: 12px;
-      }
-
-      .version {
-        color: #F9EFC7;
-        font-size: 18px;
-      }
-    </style>
-    
+    <link rel="stylesheet" href="popup.css">
   </head>
 
   <body>
     <div class="modal-header">
       <h1 class="logo">
-        <img class="logo-icon" src="images/logo2.png" sizes="20px"/>Vay-K
+        <img class="logo-icon" src="images/logo.png" sizes="20px"/>Vay-K
         <span class="version">(1.0)</span>
       </h1>
     </div>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <style>
-    * {box-sizing: border-box}
-    
-    /* Set height of body and the document to 100% */
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: "Jacques Francois";
-    }
-    
-    /* Style tab links */
-    .tablink {
-      background-color: #F9EFC7;
-      font-weight: bold;
-      color: black;
-      font-family: "Jacques Francois";
-      float: left;
-      outline: black;
-      cursor: pointer;
-      padding: 12px 14px;
-      font-size: 20px;
-      width: 33.33%;
-    }
-    
-    .tablink:hover {
-      background-color: #FDCCA0;
-    }
-    
-    /* Style the tab content (and add height:100% for full page content) */
-    .tabcontent {
-      color: black;
-      padding: 70px 20px;
-      height: 100%;
-      font-size: 20px;
-    }
-
-    
-    #Bookmark {background-color: #3B586B;}
-    #Trips {background-color: #3B586B;}
-    #Account {background-color: #3B586B;}
-    </style>
-    </head>
-    <body>
-
-      <!-- tablink and tabContent are necessary so don't take them out -->
-
-    <!-- <button class = "tablink Bookmark" id = "link"><p>Bookmark</p></button>
-    <button class = "tablink Trips" id = "link"><p>Trips</p></button>
-    <button class = "tablink Account" id = "link"><p>Account</p></button> -->
-
-    <button class = "tablink" id = "link" onclick="openTab('Bookmark')">Bookmark</button>
-    <button class = "tablink" id = "link" onclick="openTab('Trips')">Trips</button>
-    <button class = "tablink" id = "link" onclick="openTab('Account')">Account</button>
-
-    <div id = "Account" class = "tabContent">
-        <h3>Account</h3>
-        <p>View access to account settings</p>
+    <div id="tablinkContainer">
+      <button class="tablink" data-link="bookmark">Bookmark</button>
+      <button class="tablink" data-link="trip">Trips</button>
+      <button class="tablink" data-link="account">Account</button>
     </div>
 
-    <div id = "Bookmark" class = "tabContent" style = "display:none">
-      <h3>Bookmark</h3>
-      <p>Check bookmarks that have been saved</p>
-    </div>
-    
-    <div id = "Trips" class = "tabContent" style = "display:none">
-      <h3>Trips</h3>
-      <p>Look at previously saved trips</p> 
-    </div>
+    <div class="tablink-content">
+      <div id="account" class="tabContent hidden">
+          <h3>Account</h3>
+          <p>View access to account settings</p>
+      </div>
 
-    <!-- <script src="script.js"></script> -->
+      <div id="bookmark" class="tabContent hidden">
+        <h3>Bookmark</h3>
+        <p>Check bookmarks that have been saved</p>
+      </div>
 
-    <!-- <script>
-      // function openTab(evt, tabName) {
-      //   var i, x, tablinks;
-      //   x = document.getElementsByClassName("tabContent");
-      //   for (i = 0; i < x.length; i++) {
-      //     x[i].style.display = "none";
-      //   }
-      //   tablinks = document.getElementsByClassName("tablink");
-      //   for (i = 0; i < x.length; i++) {
-      //     tablinks[i].className = tablinks[i].className.replace(" active", "");
-      //   }
-      //   document.getElementById(tabName).style.display = "block";
-      //   evt.currentTarget.className += " active";
-      // }
-      function openTab(tabName) {
-        var i;
-        var x = document.getElementsByClassName("tabContent");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
-        }
-        document.getElementById(tabName).style.display = "block";  
-      }
-    </script> -->
-
-    <script>
-      function openTab(tabName) {
-        var i;
-        var x = document.getElementsByClassName("tabContent");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
-        }
-        document.getElementById(tabName).style.display = "block";
-      }
-    </script>
-     
+      <div id="trip" class="tabContent hidden">
+        <h3>Trips</h3>
+        <p>Look at previously saved trips</p> 
       </div>
     </div>
+
+    <script src="popup.js"></script>
   </body>
 </html>
