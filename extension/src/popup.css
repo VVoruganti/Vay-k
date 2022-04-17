@@ -7,6 +7,7 @@ body {
   min-height: 500px;
   padding: 0;
   width: 390px;
+  background-color: #3B586B;
 }
 
 h1 {
@@ -99,5 +100,5 @@ body, html {
 
 .version {
   color: #F9EFC7;
-  font-size: 18px;
+  font-size: 15px;
 }
