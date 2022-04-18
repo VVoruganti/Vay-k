@@ -11,4 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById(selectedMenu).classList.remove('hidden');
     });
   });
-  
+
+  async function getCurrentTabURL() {
+    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
+      let url = tabs[0].url;
+  });
+  }
+
