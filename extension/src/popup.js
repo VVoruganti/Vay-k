@@ -12,9 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  async function getCurrentTabURL() {
-    chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-      let url = tabs[0].url;
-  });
-  }
+async function getCurrentTabURL() {
+    const tabs = await chrome.tabs.query({active: true, currentWindow: true})
+    let url = tabs[0].url;
+    return url;
+}
 
+async function addBookmark() {
+    fetch(`http://localhost:5000/add/bookmark`, {
+        body: JSON.stringify(await getCurrentTabURL())
+    })   
+}
