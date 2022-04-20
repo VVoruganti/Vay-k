@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+async getTrips() {
+    const res = await fetch("http://localhost:5000/trips");
+    const json = res.json();
+    const data = json.data;
+    console.log(data);
+
+}
+
+
 async function getCurrentTabURL() {
     const tabs = await chrome.tabs.query({active: true, currentWindow: true})
     let url = tabs[0].url;
